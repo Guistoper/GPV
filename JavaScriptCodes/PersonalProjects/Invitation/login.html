@@ -1,0 +1,42 @@
+<html>
+    <link rel="stylesheet" href="styles.css">
+    <title>
+        Sign In - Appletre
+    </title>
+    <header class="login">
+        <h1>
+            Welcome to the Appletre Family!
+        </h1>
+    </header>
+    <body>
+        <div>
+            <h1 class="auto">
+                Sign In
+            </h1>    
+            <p>
+                Utilize seu primeiro nome para logar no Site.
+            </p>
+            <p class="auto">
+                <input type="text" class="text" id="textdiv" onkeyup=Enter()>
+                <input type="button" class="button" id="buttdiv" value="Next" onClick=NextPage()>
+            </p>
+        </div>
+    </body>
+    <script>
+        var input = document.getElementById("textdiv");
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("buttdiv").click();
+            }
+        });
+        function NextPage() {
+            var next = document.getElementById("textdiv").value;
+            if (next.toLowerCase() == "kelia" || next.toLowerCase() == "kélia")  {
+                window.location.href = "success.html"
+            } else {
+                window.location.href = "error.html"
+            }
+        }
+    </script>
+</html>
